@@ -3,7 +3,8 @@
 disable= 
       C0114, # missing-module-docstring
       C0115, # missing-class-docstring
-      C0116 # missing-function-docstring
+      C0116, # missing-function-docstring
+      C0303, # trailing-whitespace
       W0703, # catching too general exception Exception
       C0209, # consider-using-f-string
       E0015, # unrecognized-option

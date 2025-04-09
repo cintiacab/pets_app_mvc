@@ -3,3 +3,5 @@ venv/
 venv/pyvenv.cfg
 .venv
 storage.db
+**/__pycache__
+.pytest_cache
