@@ -1,7 +1,7 @@
 from sqlalchemy.orm.exc import NoResultFound # type: ignore
 from src.models.sqlite.entities.people import PeopleTable
 from src.models.sqlite.entities.pets import PetsTable
-from src.models.sqlite.interfaces.people_repository import PeopleRepositoryInterface
+from src.models.sqlite.interfaces.people_repository import PeopleRepositoryInterface # type: ignore
 
 class PeopleRepository(PeopleRepositoryInterface):
     def __init__(self, db_connection) -> None:
@@ -18,6 +18,7 @@ class PeopleRepository(PeopleRepositoryInterface):
                 )
                 database.session.add(person_data)
                 database.session.commit()
+            
             except Exception as exception:
                 database.session.rollback()
                 raise exception
@@ -39,6 +40,7 @@ class PeopleRepository(PeopleRepositoryInterface):
                         .one()
                 )
                 return person
+            
             except NoResultFound:
                 return None
             
