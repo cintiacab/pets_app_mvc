@@ -13,7 +13,7 @@ def test_list():
     controller = PetListerController(MockPetsRepository())
     response = controller.list()
 
-    except_response = {
+    expected_response = {
         "data":{
                 "type": "Pets",
                 "count": 2,
@@ -24,4 +24,4 @@ def test_list():
             }
     }
     
-    assert response == except_response
+    assert response == expected_response
